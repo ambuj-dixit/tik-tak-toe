@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+  padding: 20px;
+}
+
+body.dark {
+  background: #111;
+  color: #f1f1f1;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.scoreboard span {
+  transition: all 0.3s ease;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #333;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  animation: pop-in 0.2s ease;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cell.X {
+  color: #ff4757;
+  animation: punchX 0.3s ease;
+}
+.cell.O {
+  color: #1e90ff;
+  animation: punchO 0.3s ease;
+}
+
+@keyframes punchX {
+  0% { transform: scale(0.5) rotate(0); }
+  50% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes punchO {
+  0% { transform: scale(0.5) rotate(0); }
+  50% { transform: scale(1.2) rotate(-10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+#message {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.controls button {
+  margin: 8px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #333;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+body.dark .cell {
+  background-color: #222;
+  color: white;
+}
+
+body.dark .cell:hover {
+  background-color: #333;
+}
+
+body.dark .controls button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark .controls button:hover {
+  background-color: white;
+  color: #222;
+}
+
+@media (max-width: 480px) {
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .controls button {
+    width: 100%;
+    margin: 6px 0;
+    font-size: 1rem;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+}
