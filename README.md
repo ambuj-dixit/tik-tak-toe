@@ -12,7 +12,6 @@ Includes theme switching (**Dark / Light mode**), **score tracking**, and **soun
 
 - ✅ **Two Play Modes**: Human vs Human or Human vs Computer
 - 🎨 **Theme Toggle**: Light mode 🌞 and Dark mode 🌙
-- 🔊 **Sound Effects**: Click, win, and draw sounds with toggle
 - 🧠 **LocalStorage Support**: Remembers your score, mode, and theme
 - 📱 **Mobile-Responsive Design**
 - ✨ Smooth animations and modern UI
